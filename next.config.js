@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 我们只保留这一行，其他什么都不要！
-  // 它清晰地告诉Next.js，这是一个输出给独立服务器（比如Cloudflare）的优化版本。
+  // 保持这个最佳实践配置
   output: "standalone",
+
+  // 加上这个！这就是根据最新的错误日志，我们找到的最终答案！
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;
